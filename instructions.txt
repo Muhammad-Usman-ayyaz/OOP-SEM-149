@@ -1,0 +1,7 @@
+1.open notepad 
+2.write the program intended for use
+3.save the file with .java extension
+4.open cmd
+5.change address path to point the file you have created
+6.compile the program using javac
+7.execute the file with java
