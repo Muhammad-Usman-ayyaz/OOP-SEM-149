@@ -1,4 +1,4 @@
-import users.Useranager;
+import users.Usermanager;
 import main.LoginSystem;
 
 public class passwordvalidator{
