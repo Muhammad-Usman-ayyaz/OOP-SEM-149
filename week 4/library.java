@@ -16,4 +16,15 @@ class libarary{
 		this.incharge=l.incharge;
 		this.staff=l.staff;
 	}
+	
+public void display() {
+    System.out.println("Library Name: " + name);
+    System.out.println("Book Details: ");
+    book.display();
+    System.out.println("Incharge: ");
+    incharge.display();
+    System.out.println("Staff: ");
+    staff.display();
+}
+
 }

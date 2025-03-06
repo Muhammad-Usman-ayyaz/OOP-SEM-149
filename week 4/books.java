@@ -49,6 +49,16 @@ class books{
 	public person getauthor(){
 		return author;
 	}
+	public void display() {
+		System.out.println("Title: " + title);
+		System.out.println("ISSM: " + issm);
+		System.out.println("Edition: " + edition);
+		System.out.println("Date of Publication: ");
+		dop.display();
+		System.out.println("Author: ");
+		author.display();
+	}
+
 	
 	
 }
