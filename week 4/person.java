@@ -34,4 +34,11 @@ class person{
 	public Address getaddreess(){
 		return address;
 	}
+	public void display() {
+		System.out.println("Name: " + name);
+		System.out.println("Role: " + role);
+		System.out.println("Address:");
+		address.display();
+	}
+
 }

@@ -36,4 +36,9 @@ class Date{
 		return date==obj?true:false;
 	}
 	
+	public void display() {
+    System.out.println(day + "/" + month + "/" + year);
+	}
+
+	
 }
