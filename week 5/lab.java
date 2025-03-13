@@ -1,9 +1,9 @@
 class lab{
 	private String labname;
-	person labstaff[]=new person[5];
-	pc pcs[]= new pc[50];
+	person labstaff[]=new person[3];
+	pc pcs[]= new pc[4];
 	public lab(String labname , pc o) {
-        this.labname = "";
+        this.labname = labname; 
         
         for(int i=0;i<pcs.length;i++){
 			pcs[i]=new pc(o.getId(),o.getType(),o.getRamsize(),o.getDisksize());
@@ -24,18 +24,20 @@ class lab{
         this.labname = labname;
     }
 	
-	public void display(){
-		System.out.println("Lab name :" + labname);
-		for(int i=0;i<pcs.length;i++){
-			System.out.println(pcs[i]);
-			
-		}
-		for(int i=0;i<labstaff.length;i++){
-			System.out.println(labstaff[i]);
-			
-		}
-		
-	}
+	public String toString() {
+        String result = "Lab Name: " + labname + "\nLab Staff:\n";
+
+        for (person p : labstaff) {
+            result += p.toString() + "\n";
+        }
+
+        result += "PCs:\n";
+        for (pc p : pcs) {
+            result += p.toString() + "\n";
+        }
+
+        return result;
+    }
 	
 }
 

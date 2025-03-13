@@ -1,12 +1,12 @@
 class Department{
 	private  String depName;
 	private  person depHead;
-	lab lab[]=new lab[25];
+	lab labs[]=new lab[5];
 	
 
 	public Department(String depName, person Head , lab l,pc p){
-		for(int i=0; i<lab.length; i++){
-			lab[i]=new lab(l.getLabname(),p);
+		for(int i=0; i<labs.length; i++){
+			labs[i]=new lab(l.getLabname(),p);
 		}
 		this.depName=depName;
 		this.depHead=new person(Head.getname(),Head.getrole());
@@ -19,11 +19,15 @@ class Department{
 	public void setdepname(String depname){
 		depName=depname;
 	}
-	public void diplay(){
-		System.out.println("Department name : "+depName+"\n Departement head : " + depHead.getname()+depHead.getrole());
-		for(int i=0;i<lab.length;i++){
-			lab[i].display();
-			
-		}
-	}
+	 public String toString() {
+        String result = "Department Name: " + depName + "\n" +
+                        "Department Head: " + depHead.getname() + " (" + depHead.getrole() + ")\n" +
+                        "Labs:\n";
+        
+        for (lab l : labs) {
+            result += l.toString() + "\n";
+        }
+        
+        return result;
+    }
 }
