@@ -12,7 +12,7 @@ public class School {
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
-        builder.append("School [name=");
+        builder.append("School [name= ");
         builder.append(name);
         builder.append(", address=");
         builder.append(address);

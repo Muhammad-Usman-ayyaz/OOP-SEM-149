@@ -13,11 +13,15 @@ public class Class {
         }
     }
     public void addstudent(Student s,int index){
-        student[index]=s;
-        counter++;
+		if(isfull()){
+			System.out.println("Error can't add ");
+		}
+		else{
+			student[index]=s;
+			counter++;
+		}
     }
     public boolean isfull(){
-        System.out.println("Full Class");
         return counter==student.length;
     }
     @Override
