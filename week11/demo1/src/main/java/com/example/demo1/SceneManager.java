@@ -356,10 +356,10 @@ public class SceneManager {
         Label score = new Label("Your final score: " + player.getScore());
 
         // Continue Button over image's "Continue" label
-        Button exitBtn = new Button();
+        Button exitBtn = new Button("exit");
         exitBtn.setLayoutX(305); // adjust based on imag
         exitBtn.setLayoutY(500);
-        exitBtn.setPrefSize(200,200);// adjust based on image
+        exitBtn.setPrefSize(200,20);// adjust based on image
 
 
 
