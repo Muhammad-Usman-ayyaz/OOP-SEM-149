@@ -181,7 +181,7 @@ public class SceneManager {
         primaryStage.setScene(new Scene(root, 800, 600));
     }
     public static void startSchallange(){
-        Image bgImage = new Image(SceneManager.class.getResource("/images/entered castle.jpg").toExternalForm());
+        Image bgImage = new Image(SceneManager.class.getResource("/images/cave enter.jpg").toExternalForm());
         BackgroundImage backgroundImage = new BackgroundImage(
                 bgImage,
                 BackgroundRepeat.NO_REPEAT,
@@ -209,7 +209,7 @@ public class SceneManager {
     }
 
     public static void Shype() {
-        Image bgImage = new Image(SceneManager.class.getResource("/images/castle description.jpg").toExternalForm());
+        Image bgImage = new Image(SceneManager.class.getResource("/images/cave description.jpg").toExternalForm());
         BackgroundImage backgroundImage = new BackgroundImage(
                 bgImage,
                 BackgroundRepeat.NO_REPEAT,
@@ -278,7 +278,7 @@ public class SceneManager {
         primaryStage.setScene(new Scene(root, 800, 600));
     }
     public static void startTchallange(){
-        Image bgImage = new Image(SceneManager.class.getResource("/images/cave enter.jpg").toExternalForm());
+        Image bgImage = new Image(SceneManager.class.getResource("/images/entered castle.jpg").toExternalForm());
         BackgroundImage backgroundImage = new BackgroundImage(
                 bgImage,
                 BackgroundRepeat.NO_REPEAT,
@@ -304,7 +304,7 @@ public class SceneManager {
         primaryStage.setScene(new Scene(root, 800, 600));
     }
     public static void Thype() {
-        Image bgImage = new Image(SceneManager.class.getResource("/images/cave description.jpg").toExternalForm());
+        Image bgImage = new Image(SceneManager.class.getResource("/images/castle description.jpg").toExternalForm());
         BackgroundImage backgroundImage = new BackgroundImage(
                 bgImage,
                 BackgroundRepeat.NO_REPEAT,
