@@ -199,7 +199,7 @@ public class SceneManager {
         doChallenge.setLayoutX(435); // adjust based on imag
         doChallenge.setLayoutY(404); // adjust based on image
         doChallenge.setPrefSize(220, 20);
-        doChallenge.setStyle("-fx-background-color: #318431;");
+        doChallenge.setStyle("-fx-background-color: transparent;");
 
         doChallenge.setOnAction(e -> {
             Shype();
@@ -296,6 +296,7 @@ public class SceneManager {
         doChallenge.setLayoutX(435); // adjust based on imag
         doChallenge.setLayoutY(404); // adjust based on image
         doChallenge.setPrefSize(230, 20);
+        doChallenge.setStyle("-fx-background-color: transparent");
 
         doChallenge.setOnAction(e -> {
             Thype();
