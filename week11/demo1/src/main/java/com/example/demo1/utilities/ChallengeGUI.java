@@ -155,14 +155,16 @@ public class ChallengeGUI {
                     new BackgroundSize(800, 600, false, false, false, false)
             );
         }
-        Image bgImage = new Image(SceneManager.class.getResource("/images/cave games female.jpg").toExternalForm());
+        else{
+            Image bgImage = new Image(SceneManager.class.getResource("/images/cave games female.jpg").toExternalForm());
             backgroundImage = new BackgroundImage(
-                bgImage,
-                BackgroundRepeat.NO_REPEAT,
-                BackgroundRepeat.NO_REPEAT,
-                BackgroundPosition.CENTER,
-                new BackgroundSize(800, 600, false, false, false, false)
-        );
+                    bgImage,
+                    BackgroundRepeat.NO_REPEAT,
+                    BackgroundRepeat.NO_REPEAT,
+                    BackgroundPosition.CENTER,
+                    new BackgroundSize(800, 600, false, false, false, false)
+            );
+        }
 
 
 
