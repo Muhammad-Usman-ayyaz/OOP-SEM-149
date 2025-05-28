@@ -79,10 +79,10 @@ public class ChallengeGUI {
         primaryStage.show();
     }
     public static void displaySecondlocation(Challenge challenge, Runnable onComplete) {
-
+        BackgroundImage backgroundImage;
         if(gender){
             Image bgImage = new Image(SceneManager.class.getResource("/images/castle game male.jpg").toExternalForm());
-            BackgroundImage backgroundImage = new BackgroundImage(
+           backgroundImage = new BackgroundImage(
                     bgImage,
                     BackgroundRepeat.NO_REPEAT,
                     BackgroundRepeat.NO_REPEAT,
@@ -90,15 +90,17 @@ public class ChallengeGUI {
                     new BackgroundSize(800, 600, false, false, false, false)
             );
         }
-        Image bgImage = new Image(SceneManager.class.getResource("/images/castle game female.jpg").toExternalForm());
-        BackgroundImage backgroundImage = new BackgroundImage(
-                bgImage,
-                BackgroundRepeat.NO_REPEAT,
-                BackgroundRepeat.NO_REPEAT,
-                BackgroundPosition.CENTER,
-                new BackgroundSize(800, 600, false, false, false, false)
-        );
+        else {
+            Image bgImage = new Image(SceneManager.class.getResource("/images/castle game female.jpg").toExternalForm());
+            backgroundImage = new BackgroundImage(
+                    bgImage,
+                    BackgroundRepeat.NO_REPEAT,
+                    BackgroundRepeat.NO_REPEAT,
+                    BackgroundPosition.CENTER,
+                    new BackgroundSize(800, 600, false, false, false, false)
+            );
 
+        }
 
 
         Pane root = new Pane();
@@ -142,9 +144,10 @@ public class ChallengeGUI {
 
 
     public static void displayThirdlocation(Challenge challenge, Runnable onComplete) {
+        BackgroundImage backgroundImage;
         if(gender){
             Image bgImage = new Image(SceneManager.class.getResource("/images/cave game male.jpg").toExternalForm());
-            BackgroundImage backgroundImage = new BackgroundImage(
+             backgroundImage = new BackgroundImage(
                     bgImage,
                     BackgroundRepeat.NO_REPEAT,
                     BackgroundRepeat.NO_REPEAT,
@@ -153,7 +156,7 @@ public class ChallengeGUI {
             );
         }
         Image bgImage = new Image(SceneManager.class.getResource("/images/cave games female.jpg").toExternalForm());
-        BackgroundImage backgroundImage = new BackgroundImage(
+            backgroundImage = new BackgroundImage(
                 bgImage,
                 BackgroundRepeat.NO_REPEAT,
                 BackgroundRepeat.NO_REPEAT,
