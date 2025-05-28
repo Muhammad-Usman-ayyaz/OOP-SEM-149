@@ -168,11 +168,11 @@ public class SceneManager {
         root.setPrefSize(800, 600);
 
         // Continue Button over image's "Continue" label
-        Button doChallenge = new Button(" Do  challange");
-        doChallenge.setLayoutX(305); // adjust based on imag
-        doChallenge.setLayoutY(500); // adjust based on image
-        doChallenge.setPrefSize(200, 60);
-        doChallenge.setStyle("-fx-background-color: #2c47a1;");
+        Button doChallenge = new Button("");
+        doChallenge.setLayoutX(435); // adjust based on imag
+        doChallenge.setLayoutY(404); // adjust based on image
+        doChallenge.setPrefSize(230, 20);
+        doChallenge.setStyle("-fx-background-color:transparent;");
 
         doChallenge.setOnAction(e -> {
             Fhype();
@@ -195,10 +195,10 @@ public class SceneManager {
         root.setPrefSize(800, 600);
 
         // Continue Button over image's "Continue" label
-        Button doChallenge = new Button(" Do  challange");
-        doChallenge.setLayoutX(305); // adjust based on imag
-        doChallenge.setLayoutY(500); // adjust based on image
-        doChallenge.setPrefSize(200, 60);
+        Button doChallenge = new Button("");
+        doChallenge.setLayoutX(435); // adjust based on imag
+        doChallenge.setLayoutY(404); // adjust based on image
+        doChallenge.setPrefSize(220, 20);
         doChallenge.setStyle("-fx-background-color: #318431;");
 
         doChallenge.setOnAction(e -> {
@@ -225,12 +225,12 @@ public class SceneManager {
         root.setPrefSize(800, 600);
 
         // Continue Button over image's "Continue" label
-        Button doChallenge = new Button();
-        doChallenge.setLayoutX(305); // adjust based on imag
-        doChallenge.setLayoutY(500); // adjust based on image
-        doChallenge.setPrefSize(200, 60);
-        doChallenge.setStyle("-fx-background-color: transparent");
 
+        Button doChallenge = new Button();
+        doChallenge.setLayoutX(585); // adjust based on imag
+        doChallenge.setLayoutY(575); // adjust based on image
+        doChallenge.setPrefSize(220, 20);
+        doChallenge.setStyle("-fx-background-color: transparent");
         doChallenge.setOnAction(e -> {
             ChallengeGUI.displaySecondlocation(currentLocation.getChallenge(), () -> {
                 player.increaseScore(currentLocation.getChallenge().getPoints());
@@ -262,9 +262,9 @@ public class SceneManager {
 
         // Continue Button over image's "Continue" label
         Button doChallenge = new Button();
-        doChallenge.setLayoutX(305); // adjust based on imag
-        doChallenge.setLayoutY(500); // adjust based on image
-        doChallenge.setPrefSize(200, 60);
+        doChallenge.setLayoutX(585); // adjust based on imag
+        doChallenge.setLayoutY(575); // adjust based on image
+        doChallenge.setPrefSize(220, 20);
         doChallenge.setStyle("-fx-background-color: transparent");
 
         doChallenge.setOnAction(e -> {
@@ -292,11 +292,10 @@ public class SceneManager {
         root.setPrefSize(800, 600);
 
         // Continue Button over image's "Continue" label
-        Button doChallenge = new Button(" Do  challange");
-        doChallenge.setLayoutX(305); // adjust based on imag
-        doChallenge.setLayoutY(500); // adjust based on image
-        doChallenge.setPrefSize(200, 60);
-        doChallenge.setStyle("-fx-background-color: #318431;");
+        Button doChallenge = new Button(" ");
+        doChallenge.setLayoutX(435); // adjust based on imag
+        doChallenge.setLayoutY(404); // adjust based on image
+        doChallenge.setPrefSize(230, 20);
 
         doChallenge.setOnAction(e -> {
             Thype();
@@ -322,9 +321,9 @@ public class SceneManager {
 
         // Continue Button over image's "Continue" label
         Button doChallenge = new Button();
-        doChallenge.setLayoutX(305); // adjust based on imag
-        doChallenge.setLayoutY(500); // adjust based on image
-        doChallenge.setPrefSize(200, 60);
+        doChallenge.setLayoutX(585); // adjust based on imag
+        doChallenge.setLayoutY(575); // adjust based on image
+        doChallenge.setPrefSize(220, 20);
         doChallenge.setStyle("-fx-background-color: transparent");
 
         doChallenge.setOnAction(e -> {
