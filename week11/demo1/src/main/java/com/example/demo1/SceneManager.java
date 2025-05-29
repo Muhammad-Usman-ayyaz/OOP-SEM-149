@@ -32,6 +32,7 @@ public class SceneManager {
     private int points;
 
     public static void init(Stage stage) {
+        //SoundPlayer.play();
         primaryStage = stage;
     }
     public static void play() {

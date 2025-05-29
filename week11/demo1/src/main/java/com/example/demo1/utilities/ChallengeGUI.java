@@ -46,12 +46,23 @@ public class ChallengeGUI {
 
         Label qLabel = new Label(challenge.question);
         TextField answerField = new TextField();
+        answerField.setPromptText("Enter Answer");
         answerField.setLayoutX(450);
-        answerField.setLayoutY(510);
-        answerField.setPromptText("Your answer");
+        answerField.setLayoutY(420);
+         answerField.setPrefWidth(240);
+         answerField.setPrefHeight(60);
+        answerField.setStyle("-fx-background-color: transparent;");
+
         Button submitBtn = new Button("Submit");
-        submitBtn.setLayoutX(575);
-        submitBtn.setLayoutY(510);
+        submitBtn.setStyle(
+                "-fx-background-color: #546b50;" +    // background color
+                        "-fx-text-fill: white;" +              // text color (white)
+                        "-fx-font-weight: bold;" +             // bold text
+                        "-fx-font-size: 16px;"                 // increase font size (16 pixels)
+        );
+        submitBtn.setLayoutX(450); // adjust based on image
+        submitBtn.setLayoutY(520); // adjust based on image
+        submitBtn.setPrefSize(100,50);
 
 
         submitBtn.setOnAction(e -> {
@@ -186,7 +197,7 @@ public class ChallengeGUI {
         answerField.setPromptText("Your answer");
         Button submitBtn = new Button("Submit");
         submitBtn.setLayoutX(475);
-        submitBtn.setLayoutY(425);git
+        submitBtn.setLayoutY(425);
 
 
         submitBtn.setOnAction(e -> {
