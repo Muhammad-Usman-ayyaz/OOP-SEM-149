@@ -32,13 +32,13 @@ public class SceneManager {
     private int points;
 
     public static void init(Stage stage) {
-        //SoundPlayer.play();
+        SoundPlayer.play("/music/music.wav",true);
         primaryStage = stage;
     }
     public static void play() {
         BackgroundImage backgroundImage;
         if (gender){
-            Image bgImage = new Image(SceneManager.class.getResource("/images/save prince.jpg").toExternalForm());
+            Image bgImage = new Image(SceneManager.class.getResource("/images/save princess.jpg").toExternalForm());
             backgroundImage = new BackgroundImage(
                     bgImage,
                     BackgroundRepeat.NO_REPEAT,
@@ -49,7 +49,7 @@ public class SceneManager {
 
         }
         else {
-            Image bgImage = new Image(SceneManager.class.getResource("/images/save princess.jpg").toExternalForm());
+            Image bgImage = new Image(SceneManager.class.getResource("/images/save prince.jpg").toExternalForm());
             backgroundImage = new BackgroundImage(
                     bgImage,
                     BackgroundRepeat.NO_REPEAT,
@@ -405,10 +405,16 @@ public class SceneManager {
         Label score = new Label("Your final score: " + player.getScore());
 
         // Continue Button over image's "Continue" label
-        Button exitBtn = new Button("exit");
-        exitBtn.setLayoutX(305); // adjust based on imag
-        exitBtn.setLayoutY(500);
-        exitBtn.setPrefSize(200,20);// adjust based on image
+        Button exitBtn = new Button("Submit");
+        exitBtn.setStyle(
+                "-fx-background-color: #977b3b;" +    // background color
+                        "-fx-text-fill: white;" +              // text color (white)
+                        "-fx-font-weight: bold;" +             // bold text
+                        "-fx-font-size: 16px;"                 // increase font size (16 pixels)
+        );
+        exitBtn.setLayoutX(350); // adjust based on image
+        exitBtn.setLayoutY(450); // adjust based on image
+        exitBtn.setPrefSize(100, 50);
 
 
 

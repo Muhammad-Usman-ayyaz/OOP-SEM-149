@@ -47,11 +47,14 @@ public class ChallengeGUI {
         Label qLabel = new Label(challenge.question);
         TextField answerField = new TextField();
         answerField.setPromptText("Enter Answer");
-        answerField.setLayoutX(450);
-        answerField.setLayoutY(420);
-         answerField.setPrefWidth(240);
-         answerField.setPrefHeight(60);
-        answerField.setStyle("-fx-background-color: transparent;");
+        answerField.setLayoutX(400);
+        answerField.setLayoutY(400);
+        answerField.setPrefWidth(240);
+        answerField.setPrefHeight(30);
+        answerField.setStyle( "-fx-background-color: #546b50;" +    // background color
+                "-fx-text-fill: white;" +              // text color (white)
+                "-fx-font-weight: bold;" +             // bold text
+                "-fx-font-size: 16px;" );
 
         Button submitBtn = new Button("Submit");
         submitBtn.setStyle(
@@ -60,7 +63,7 @@ public class ChallengeGUI {
                         "-fx-font-weight: bold;" +             // bold text
                         "-fx-font-size: 16px;"                 // increase font size (16 pixels)
         );
-        submitBtn.setLayoutX(450); // adjust based on image
+        submitBtn.setLayoutX(470); // adjust based on image
         submitBtn.setLayoutY(520); // adjust based on image
         submitBtn.setPrefSize(100,50);
 
@@ -120,18 +123,27 @@ public class ChallengeGUI {
         root.setPrefSize(800, 600);
 
         Label qLabel = new Label(challenge.question);
+
+
         TextField answerField = new TextField();
+        answerField.setPromptText("Enter Answer");
         answerField.setLayoutX(410);
-        answerField.setLayoutY(360);
-        answerField.setPrefSize(200,40);
-        answerField.setStyle("-fx-background-color: transparent");
-        answerField.setPromptText("Your answer");
-        Button submitBtn = new Button("Submit");
-        submitBtn.setLayoutX(475);
-        submitBtn.setLayoutY(425);
+        answerField.setLayoutY(340);
+          answerField.setPrefWidth(240);
+         answerField.setPrefHeight(60);
+        answerField.setStyle("-fx-background-color: transparent;");
 
-
-        submitBtn.setOnAction(e -> {
+        Button SubmitBtn = new Button("Submit");
+        SubmitBtn.setStyle(
+                "-fx-background-color: #676658;" +    // background color
+                        "-fx-text-fill: white;" +              // text color (white)
+                        "-fx-font-weight: bold;" +             // bold text
+                        "-fx-font-size: 16px;"                 // increase font size (16 pixels)
+        );
+        SubmitBtn.setLayoutX(450); // adjust based on image
+        SubmitBtn.setLayoutY(520); // adjust based on image
+        SubmitBtn.setPrefSize(100, 50);   //cave location button
+        SubmitBtn.setOnAction(e -> {
             int earned = 0;
             if (challenge instanceof RiddleChallenge rc) {
                 if (rc.checkAnswer(answerField.getText())) earned = rc.getPoints();
@@ -152,7 +164,7 @@ public class ChallengeGUI {
             SceneManager.play();
         });
 
-        root.getChildren().addAll(qLabel, answerField, submitBtn);
+        root.getChildren().addAll(qLabel, answerField, SubmitBtn);
         primaryStage.setScene(new Scene(root, 800, 600));
         primaryStage.setTitle("Challenge 2");
         primaryStage.show();
@@ -195,12 +207,20 @@ public class ChallengeGUI {
         answerField.setPrefSize(200,40);
         answerField.setStyle("-fx-background-color: transparent");
         answerField.setPromptText("Your answer");
-        Button submitBtn = new Button("Submit");
-        submitBtn.setLayoutX(475);
-        submitBtn.setLayoutY(425);
+
+        Button SubmitBtn = new Button("Submit");
+        SubmitBtn.setStyle(
+                "-fx-background-color: #82939d;" +    // background color
+                        "-fx-text-fill: white;" +              // text color (white)
+                        "-fx-font-weight: bold;" +             // bold text
+                        "-fx-font-size: 16px;"                 // increase font size (16 pixels)
+        );
+        SubmitBtn.setLayoutX(450); // adjust based on image
+        SubmitBtn.setLayoutY(520); // adjust based on image
+        SubmitBtn.setPrefSize(100,50);
 
 
-        submitBtn.setOnAction(e -> {
+        SubmitBtn.setOnAction(e -> {
             int earned = 0;
             if (challenge instanceof RiddleChallenge rc) {
                 if (rc.checkAnswer(answerField.getText())) earned = rc.getPoints();
@@ -219,7 +239,7 @@ public class ChallengeGUI {
             onComplete.run();
         });
 
-        root.getChildren().addAll(qLabel, answerField, submitBtn);
+        root.getChildren().addAll(qLabel, answerField, SubmitBtn);
         primaryStage.setScene(new Scene(root, 800, 600));
         primaryStage.setTitle("Challenge 3");
         primaryStage.show();
