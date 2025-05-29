@@ -29,9 +29,56 @@ public class SceneManager {
     private static int count=0;
     private static final DropShadow glowEffect = new DropShadow(20, Color.CYAN);
     public static boolean gender;
+    private int points;
 
     public static void init(Stage stage) {
         primaryStage = stage;
+    }
+    public static void play() {
+        BackgroundImage backgroundImage;
+        if (gender){
+            Image bgImage = new Image(SceneManager.class.getResource("/images/save prince.jpg").toExternalForm());
+            backgroundImage = new BackgroundImage(
+                    bgImage,
+                    BackgroundRepeat.NO_REPEAT,
+                    BackgroundRepeat.NO_REPEAT,
+                    BackgroundPosition.CENTER,
+                    new BackgroundSize(800, 600, false, false, false, false)
+            );
+
+        }
+        else {
+            Image bgImage = new Image(SceneManager.class.getResource("/images/save princess.jpg").toExternalForm());
+            backgroundImage = new BackgroundImage(
+                    bgImage,
+                    BackgroundRepeat.NO_REPEAT,
+                    BackgroundRepeat.NO_REPEAT,
+                    BackgroundPosition.CENTER,
+                    new BackgroundSize(800, 600, false, false, false, false)
+            );
+        }
+
+
+
+
+        Pane root = new Pane();
+        root.setBackground(new Background(backgroundImage));
+        root.setPrefSize(800, 600);
+
+
+        Button doneBtn = new Button("");
+        doneBtn.setLayoutX(250);
+        doneBtn.setLayoutY(250);
+        doneBtn.setPrefSize(300,400);
+        doneBtn.setStyle("-fx-background-color: transparent;");
+
+        doneBtn.setOnAction(e -> {
+            startTchallange();
+        });
+
+        root.getChildren().addAll(doneBtn);
+        Scene scene = new Scene(root);
+        primaryStage.setScene(scene);
     }
 
     public static void showMainMenu() {
@@ -45,7 +92,7 @@ public class SceneManager {
                 new BackgroundSize(800, 600, false, false, false, false)
         );
 
-        // Use Pane instead of VBox for absolute positioning
+
         Pane root = new Pane();
         root.setBackground(new Background(backgroundImage));
         root.setPrefSize(800, 600);
@@ -339,7 +386,7 @@ public class SceneManager {
         primaryStage.setScene(new Scene(root, 800, 600));
     }
 
-    private static void showGameOver() {
+    public static void showGameOver() {
         Image bgImage = new Image(SceneManager.class.getResource("/images/game over.jpg").toExternalForm());
         BackgroundImage backgroundImage = new BackgroundImage(
                 bgImage,
@@ -526,14 +573,15 @@ public class SceneManager {
 
     }
     private static void showCharactersecond(){
-        Image bgImage = new Image(SceneManager.class.getResource("/images/5 Select Character").toExternalForm());
-        BackgroundImage backgroundImage = new BackgroundImage(
-                bgImage,
-                BackgroundRepeat.NO_REPEAT,
-                BackgroundRepeat.NO_REPEAT,
-                BackgroundPosition.CENTER,
-                new BackgroundSize(800, 600, false, false, false, false)
-        );
+
+            Image bgImage = new Image(SceneManager.class.getResource("/images/5 Select Character.jpg").toExternalForm());
+            BackgroundImage backgroundImage = new BackgroundImage(
+                    bgImage,
+                    BackgroundRepeat.NO_REPEAT,
+                    BackgroundRepeat.NO_REPEAT,
+                    BackgroundPosition.CENTER,
+                    new BackgroundSize(800, 600, false, false, false, false)
+            );
 
         Pane root = new Pane();
         root.setBackground(new Background(backgroundImage));

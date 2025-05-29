@@ -6,7 +6,7 @@ import java.util.List;
 public class Player {
     private String name;
     private int score;
-    private Inventory inventory;
+    private final Inventory inventory;
 
     public Player(String name) {
         this.name = name;

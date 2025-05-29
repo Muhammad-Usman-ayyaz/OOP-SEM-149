@@ -7,6 +7,7 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import com.example.demo1.SceneManager;
+import com.example.demo1.SceneManager.*;
 
 import static com.example.demo1.SceneManager.*;
 
@@ -64,7 +65,7 @@ public class ChallengeGUI {
                 } catch (NumberFormatException ignored) {}
             } else if (challenge instanceof MiniGameChallenge mgc ) {
 
-                mgc.play(onComplete);
+
                 return;
             }
 
@@ -81,7 +82,7 @@ public class ChallengeGUI {
     public static void displaySecondlocation(Challenge challenge, Runnable onComplete) {
         BackgroundImage backgroundImage;
         if(gender){
-            Image bgImage = new Image(SceneManager.class.getResource("/images/castle game male.jpg").toExternalForm());
+            Image bgImage = new Image(SceneManager.class.getResource("/images/cave game male.jpg").toExternalForm());
            backgroundImage = new BackgroundImage(
                     bgImage,
                     BackgroundRepeat.NO_REPEAT,
@@ -91,7 +92,7 @@ public class ChallengeGUI {
             );
         }
         else {
-            Image bgImage = new Image(SceneManager.class.getResource("/images/castle game female.jpg").toExternalForm());
+            Image bgImage = new Image(SceneManager.class.getResource("/images/cave games female.jpg").toExternalForm());
             backgroundImage = new BackgroundImage(
                     bgImage,
                     BackgroundRepeat.NO_REPEAT,
@@ -109,31 +110,35 @@ public class ChallengeGUI {
 
         Label qLabel = new Label(challenge.question);
         TextField answerField = new TextField();
-        answerField.setLayoutX(450);
-        answerField.setLayoutY(510);
+        answerField.setLayoutX(410);
+        answerField.setLayoutY(360);
+        answerField.setPrefSize(200,40);
+        answerField.setStyle("-fx-background-color: transparent");
         answerField.setPromptText("Your answer");
         Button submitBtn = new Button("Submit");
-        submitBtn.setLayoutX(575);
-        submitBtn.setLayoutY(510);
+        submitBtn.setLayoutX(475);
+        submitBtn.setLayoutY(425);
+
 
         submitBtn.setOnAction(e -> {
             int earned = 0;
             if (challenge instanceof RiddleChallenge rc) {
                 if (rc.checkAnswer(answerField.getText())) earned = rc.getPoints();
             } else if (challenge instanceof MathChallenge mc) {
+
                 try {
                     int ans = Integer.parseInt(answerField.getText());
                     if (mc.checkAnswer(ans)) earned = mc.getPoints();
                 } catch (NumberFormatException ignored) {}
+
             } else if (challenge instanceof MiniGameChallenge mgc ) {
 
-                mgc.play(onComplete);
                 return;
             }
 
             challenge.points = earned;
             onComplete.run();
-            startTchallange();
+            SceneManager.play();
         });
 
         root.getChildren().addAll(qLabel, answerField, submitBtn);
@@ -146,7 +151,7 @@ public class ChallengeGUI {
     public static void displayThirdlocation(Challenge challenge, Runnable onComplete) {
         BackgroundImage backgroundImage;
         if(gender){
-            Image bgImage = new Image(SceneManager.class.getResource("/images/cave game male.jpg").toExternalForm());
+            Image bgImage = new Image(SceneManager.class.getResource("/images/castle game male.jpg").toExternalForm());
              backgroundImage = new BackgroundImage(
                     bgImage,
                     BackgroundRepeat.NO_REPEAT,
@@ -156,7 +161,7 @@ public class ChallengeGUI {
             );
         }
         else{
-            Image bgImage = new Image(SceneManager.class.getResource("/images/cave games female.jpg").toExternalForm());
+            Image bgImage = new Image(SceneManager.class.getResource("/images/castle game female.jpg").toExternalForm());
             backgroundImage = new BackgroundImage(
                     bgImage,
                     BackgroundRepeat.NO_REPEAT,
@@ -174,12 +179,14 @@ public class ChallengeGUI {
 
         Label qLabel = new Label(challenge.question);
         TextField answerField = new TextField();
-        answerField.setLayoutX(450);
-        answerField.setLayoutY(510);
+        answerField.setLayoutX(410);
+        answerField.setLayoutY(360);
+        answerField.setPrefSize(200,40);
+        answerField.setStyle("-fx-background-color: transparent");
         answerField.setPromptText("Your answer");
         Button submitBtn = new Button("Submit");
-        submitBtn.setLayoutX(575);
-        submitBtn.setLayoutY(510);
+        submitBtn.setLayoutX(475);
+        submitBtn.setLayoutY(425);git
 
 
         submitBtn.setOnAction(e -> {
@@ -191,8 +198,9 @@ public class ChallengeGUI {
                     int ans = Integer.parseInt(answerField.getText());
                     if (mc.checkAnswer(ans)) earned = mc.getPoints();
                 } catch (NumberFormatException ignored) {}
+
             } else if (challenge instanceof MiniGameChallenge mgc ) {
-                mgc.play(onComplete);
+                showGameOver();
                 return;
             }
 
