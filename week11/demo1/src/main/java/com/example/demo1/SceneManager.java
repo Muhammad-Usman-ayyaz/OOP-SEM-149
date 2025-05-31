@@ -19,6 +19,7 @@ import java.util.Objects;
 
 import static com.example.demo1.utilities.ChallengeGUI.displayFirstlocation;
 import static com.example.demo1.utilities.ChallengeGUI.displayThirdlocation;
+import static javax.swing.text.html.HTML.Tag.U;
 
 public class SceneManager {
     public static Stage primaryStage;
@@ -72,12 +73,24 @@ public class SceneManager {
         doneBtn.setLayoutY(250);
         doneBtn.setPrefSize(300,400);
         doneBtn.setStyle("-fx-background-color: transparent;");
+        Button backButton = new Button("\uD83E\uDC14");
+        backButton.setLayoutX(0); // X-position of "START" button in the image
+        backButton.setLayoutY(0); // Y-position of "START" button in the image
+        backButton.setPrefSize(75, 50); // Width and height matching image "START" button
+        backButton.setStyle( "-fx-background-color: #577283;" +    // background color
+                "-fx-text-fill: white;" +              // text color (white)
+                "-fx-font-weight: bold;" +             // bold text
+                "-fx-font-size: 22px;");
+        backButton.setOnAction(e -> {
+            ChallengeGUI.displaySecondlocation(currentLocation.getChallenge(), () -> {
+                player.increaseScore(currentLocation.getChallenge().getPoints());});
+        });
 
         doneBtn.setOnAction(e -> {
             startTchallange();
         });
 
-        root.getChildren().addAll(doneBtn);
+        root.getChildren().addAll(doneBtn,backButton);
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
     }
@@ -105,10 +118,20 @@ public class SceneManager {
         startButton.setPrefSize(160, 50); // Width and height matching image "START" button
         startButton.setStyle("-fx-background-color: transparent");
 
+        Button backButton = new Button("\uD83E\uDC14");
+        backButton.setLayoutX(0); // X-position of "START" button in the image
+        backButton.setLayoutY(0); // Y-position of "START" button in the image
+        backButton.setPrefSize(75, 50); // Width and height matching image "START" button
+        backButton.setStyle( "-fx-background-color: #894b12;" +    // background color
+                "-fx-text-fill: white;" +              // text color (white)
+                "-fx-font-weight: bold;" +             // bold text
+                "-fx-font-size: 22px;");
+        backButton.setOnAction(e -> {primaryStage.close();});
+
         startButton.setOnAction(e -> showCharacterAndDifficultyScene());
 
         // Add the invisible button to the Pane
-        root.getChildren().add(startButton);
+        root.getChildren().addAll(backButton,startButton);
 
         // Create scene and show
         Scene scene = new Scene(root);
@@ -147,6 +170,16 @@ public class SceneManager {
         DifficultBtn.setPrefSize(200, 50);
         DifficultBtn.setStyle("-fx-background-color: transparent;");
 
+        Button backButton = new Button("\uD83E\uDC14");
+        backButton.setLayoutX(0); // X-position of "START" button in the image
+        backButton.setLayoutY(0); // Y-position of "START" button in the image
+        backButton.setPrefSize(75, 50); // Width and height matching image "START" button
+        backButton.setStyle( "-fx-background-color: #894b12;" +    // background color
+                "-fx-text-fill: white;" +              // text color (white)
+                "-fx-font-weight: bold;" +             // bold text
+                "-fx-font-size: 22px;");
+        backButton.setOnAction(e -> {showMainMenu();});
+
         DifficultBtn.setOnAction(e -> {      //lemda equation
             showDifficultyfirst();
         });
@@ -156,7 +189,7 @@ public class SceneManager {
 
 
         // Add all components
-        root.getChildren().addAll(DifficultBtn,  continueBtn);
+        root.getChildren().addAll(DifficultBtn,  continueBtn,backButton);
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
     }
@@ -221,11 +254,20 @@ public class SceneManager {
         doChallenge.setLayoutY(404); // adjust based on image
         doChallenge.setPrefSize(230, 20);
         doChallenge.setStyle("-fx-background-color:transparent;");
+        Button backButton = new Button("\uD83E\uDC14");
+        backButton.setLayoutX(0); // X-position of "START" button in the image
+        backButton.setLayoutY(0); // Y-position of "START" button in the image
+        backButton.setPrefSize(75, 50); // Width and height matching image "START" button
+        backButton.setStyle( "-fx-background-color: #667c17;" +    // background color
+                "-fx-text-fill: white;" +              // text color (white)
+                "-fx-font-weight: bold;" +             // bold text
+                "-fx-font-size: 22px;");
+        backButton.setOnAction(e -> {Entername();});
 
         doChallenge.setOnAction(e -> {
             Fhype();
         });
-        root.getChildren().addAll(doChallenge);
+        root.getChildren().addAll(doChallenge,backButton);
         primaryStage.setScene(new Scene(root, 800, 600));
     }
     public static void startSchallange(){
@@ -248,11 +290,23 @@ public class SceneManager {
         doChallenge.setLayoutY(404); // adjust based on image
         doChallenge.setPrefSize(220, 20);
         doChallenge.setStyle("-fx-background-color: transparent;");
+        Button backButton = new Button("\uD83E\uDC14");
+        backButton.setLayoutX(0); // X-position of "START" button in the image
+        backButton.setLayoutY(0); // Y-position of "START" button in the image
+        backButton.setPrefSize(75, 50); // Width and height matching image "START" button
+        backButton.setStyle( "-fx-background-color: #577283;" +    // background color
+                "-fx-text-fill: white;" +              // text color (white)
+                "-fx-font-weight: bold;" +             // bold text
+                "-fx-font-size: 22px;");
+        backButton.setOnAction(e -> {
+            ChallengeGUI.displayFirstlocation(currentLocation.getChallenge(), () -> {
+                player.increaseScore(currentLocation.getChallenge().getPoints());});
+        });
 
         doChallenge.setOnAction(e -> {
             Shype();
         });
-        root.getChildren().addAll(doChallenge);
+        root.getChildren().addAll(doChallenge,backButton);
         primaryStage.setScene(new Scene(root, 800, 600));
     }
 
@@ -279,6 +333,17 @@ public class SceneManager {
         doChallenge.setLayoutY(575); // adjust based on image
         doChallenge.setPrefSize(220, 20);
         doChallenge.setStyle("-fx-background-color: transparent");
+        Button backButton = new Button("\uD83E\uDC14");
+        backButton.setLayoutX(0); // X-position of "START" button in the image
+        backButton.setLayoutY(0); // Y-position of "START" button in the image
+        backButton.setPrefSize(75, 50); // Width and height matching image "START" button
+        backButton.setStyle( "-fx-background-color: #4d230a;" +    // background color
+                "-fx-text-fill: white;" +              // text color (white)
+                "-fx-font-weight: bold;" +             // bold text
+                "-fx-font-size: 22px;");
+        backButton.setOnAction(e -> {
+          startSchallange();
+        });
         doChallenge.setOnAction(e -> {
             ChallengeGUI.displaySecondlocation(currentLocation.getChallenge(), () -> {
                 player.increaseScore(currentLocation.getChallenge().getPoints());
@@ -287,12 +352,12 @@ public class SceneManager {
 
             });
         });
-        root.getChildren().addAll(doChallenge);
+        root.getChildren().addAll(doChallenge,backButton);
         primaryStage.setScene(new Scene(root, 800, 600));
     }
 
 
-    private static void Fhype(){
+    public static void Fhype(){
         Image bgImage = new Image(SceneManager.class.getResource("/images/forest description.jpg").toExternalForm());
         BackgroundImage backgroundImage = new BackgroundImage(
                 bgImage,
@@ -314,6 +379,16 @@ public class SceneManager {
         doChallenge.setLayoutY(575); // adjust based on image
         doChallenge.setPrefSize(220, 20);
         doChallenge.setStyle("-fx-background-color: transparent");
+        Button backButton = new Button("\uD83E\uDC14");
+        backButton.setLayoutX(0); // X-position of "START" button in the image
+        backButton.setLayoutY(0); // Y-position of "START" button in the image
+        backButton.setPrefSize(75, 50); // Width and height matching image "START" button
+        backButton.setStyle( "-fx-background-color: #667c17;" +    // background color
+                "-fx-text-fill: white;" +              // text color (white)
+                "-fx-font-weight: bold;" +             // bold text
+                "-fx-font-size: 22px;");
+        backButton.setOnAction(e -> {startFchallange();});
+
 
         doChallenge.setOnAction(e -> {
             ChallengeGUI.displayFirstlocation(currentLocation.getChallenge(), () -> {
@@ -322,7 +397,7 @@ public class SceneManager {
 
             });
         });
-        root.getChildren().addAll(doChallenge);
+        root.getChildren().addAll(doChallenge,backButton);
         primaryStage.setScene(new Scene(root, 800, 600));
     }
     public static void startTchallange(){
@@ -345,11 +420,23 @@ public class SceneManager {
         doChallenge.setLayoutY(404); // adjust based on image
         doChallenge.setPrefSize(230, 20);
         doChallenge.setStyle("-fx-background-color: transparent");
+        Button backButton = new Button("\uD83E\uDC14");
+        backButton.setLayoutX(0); // X-position of "START" button in the image
+        backButton.setLayoutY(0); // Y-position of "START" button in the image
+        backButton.setPrefSize(75, 50); // Width and height matching image "START" button
+        backButton.setStyle( "-fx-background-color: #577283;" +    // background color
+                "-fx-text-fill: white;" +              // text color (white)
+                "-fx-font-weight: bold;" +             // bold text
+                "-fx-font-size: 22px;");
+        backButton.setOnAction(e -> {
+            ChallengeGUI.displaySecondlocation(currentLocation.getChallenge(), () -> {
+                player.increaseScore(currentLocation.getChallenge().getPoints());});
+        });
 
         doChallenge.setOnAction(e -> {
             Thype();
         });
-        root.getChildren().addAll(doChallenge);
+        root.getChildren().addAll(doChallenge,backButton);
         primaryStage.setScene(new Scene(root, 800, 600));
     }
     public static void Thype() {
@@ -374,6 +461,17 @@ public class SceneManager {
         doChallenge.setLayoutY(575); // adjust based on image
         doChallenge.setPrefSize(220, 20);
         doChallenge.setStyle("-fx-background-color: transparent");
+        Button backButton = new Button("\uD83E\uDC14");
+        backButton.setLayoutX(0); // X-position of "START" button in the image
+        backButton.setLayoutY(0); // Y-position of "START" button in the image
+        backButton.setPrefSize(75, 50); // Width and height matching image "START" button
+        backButton.setStyle( "-fx-background-color: #577283;" +    // background color
+                "-fx-text-fill: white;" +              // text color (white)
+                "-fx-font-weight: bold;" +             // bold text
+                "-fx-font-size: 22px;");
+        backButton.setOnAction(e -> {
+            startTchallange();
+        });
 
         doChallenge.setOnAction(e -> {
             ChallengeGUI.displayThirdlocation(currentLocation.getChallenge(), () -> {
@@ -383,7 +481,7 @@ public class SceneManager {
 
             });
         });
-        root.getChildren().addAll(doChallenge);
+        root.getChildren().addAll(doChallenge,backButton);
         primaryStage.setScene(new Scene(root, 800, 600));
     }
 
@@ -403,6 +501,18 @@ public class SceneManager {
         root.setBackground(new Background(backgroundImage));
         root.setPrefSize(800, 600);
         Label score = new Label("Your final score: " + player.getScore());
+        Button backButton = new Button("\uD83E\uDC14");
+        backButton.setLayoutX(0); // X-position of "START" button in the image
+        backButton.setLayoutY(0); // Y-position of "START" button in the image
+        backButton.setPrefSize(75, 50); // Width and height matching image "START" button
+        backButton.setStyle( "-fx-background-color: #577283;" +    // background color
+                "-fx-text-fill: white;" +              // text color (white)
+                "-fx-font-weight: bold;" +             // bold text
+                "-fx-font-size: 22px;");
+        backButton.setOnAction(e -> {
+            ChallengeGUI.displayThirdlocation(currentLocation.getChallenge(), () -> {
+                player.increaseScore(currentLocation.getChallenge().getPoints());});
+        });
 
         // Continue Button over image's "Continue" label
         Button exitBtn = new Button("Submit");
@@ -419,7 +529,7 @@ public class SceneManager {
 
 
         exitBtn.setOnAction(e -> primaryStage.close());
-        root.getChildren().addAll( score, exitBtn);
+        root.getChildren().addAll( score, exitBtn,backButton);
         primaryStage.setScene(new Scene(root, 800, 600));
 
 
@@ -457,6 +567,15 @@ public class SceneManager {
         hardtBtn.setLayoutY(385); // adjust based on image
         hardtBtn.setPrefSize(200, 60);
         hardtBtn.setStyle("-fx-background-color: transparent;");
+        Button backButton = new Button("\uD83E\uDC14");
+        backButton.setLayoutX(0); // X-position of "START" button in the image
+        backButton.setLayoutY(0); // Y-position of "START" button in the image
+        backButton.setPrefSize(75, 50); // Width and height matching image "START" button
+        backButton.setStyle( "-fx-background-color: #894b12;" +    // background color
+                "-fx-text-fill: white;" +              // text color (white)
+                "-fx-font-weight: bold;" +             // bold text
+                "-fx-font-size: 22px;");
+        backButton.setOnAction(e -> {showCharacterfirst();});
 
         easyBtn.setOnAction(e -> {
             difficulty=Difficulty.EASY;
@@ -472,7 +591,7 @@ public class SceneManager {
             Entername();
 
         });
-        root.getChildren().addAll(hardtBtn,easyBtn,mediumBtn);
+        root.getChildren().addAll(hardtBtn,easyBtn,mediumBtn,backButton);
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
 
@@ -509,6 +628,15 @@ public class SceneManager {
         hardtBtn.setLayoutY(385); // adjust based on image
         hardtBtn.setPrefSize(200, 60);
         hardtBtn.setStyle("-fx-background-color: transparent;");
+        Button backButton = new Button("\uD83E\uDC14");
+        backButton.setLayoutX(0); // X-position of "START" button in the image
+        backButton.setLayoutY(0); // Y-position of "START" button in the image
+        backButton.setPrefSize(75, 50); // Width and height matching image "START" button
+        backButton.setStyle( "-fx-background-color: #894b12;" +    // background color
+                "-fx-text-fill: white;" +              // text color (white)
+                "-fx-font-weight: bold;" +             // bold text
+                "-fx-font-size: 22px;");
+        backButton.setOnAction(e -> {showCharacterAndDifficultyScene();});
 
         easyBtn.setOnAction(e -> {
             difficulty=Difficulty.EASY;
@@ -525,7 +653,7 @@ public class SceneManager {
             showCharactersecond();
 
         });
-        root.getChildren().addAll(hardtBtn,easyBtn,mediumBtn);
+        root.getChildren().addAll(hardtBtn,easyBtn,mediumBtn,backButton);
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
 
@@ -558,6 +686,15 @@ public class SceneManager {
         maleBtn.setLayoutY(140); // adjust based on image
         maleBtn.setPrefSize(250, 380);
         maleBtn.setStyle("-fx-background-color: rgba(255, 255, 255, 0); -fx-border-color: transparent;");;
+        Button backButton = new Button("\uD83E\uDC14");
+        backButton.setLayoutX(0); // X-position of "START" button in the image
+        backButton.setLayoutY(0); // Y-position of "START" button in the image
+        backButton.setPrefSize(75, 50); // Width and height matching image "START" button
+        backButton.setStyle( "-fx-background-color: #894b12;" +    // background color
+                "-fx-text-fill: white;" +              // text color (white)
+                "-fx-font-weight: bold;" +             // bold text
+                "-fx-font-size: 22px;");
+        backButton.setOnAction(e -> {showCharacterAndDifficultyScene();});
 
 
 
@@ -574,7 +711,7 @@ public class SceneManager {
             showDifficultysecond();
         });
 
-        root.getChildren().addAll(FemaleBtn,maleBtn);
+        root.getChildren().addAll(FemaleBtn,maleBtn,backButton);
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
 
@@ -605,6 +742,15 @@ public class SceneManager {
         maleBtn.setLayoutY(140); // adjust based on image
         maleBtn.setPrefSize(250, 380);
         maleBtn.setStyle("-fx-background-color: rgba(255, 255, 255, 0); -fx-border-color: transparent;");;
+        Button backButton = new Button("\uD83E\uDC14");
+        backButton.setLayoutX(0); // X-position of "START" button in the image
+        backButton.setLayoutY(0); // Y-position of "START" button in the image
+        backButton.setPrefSize(75, 50); // Width and height matching image "START" button
+        backButton.setStyle( "-fx-background-color: #894b12;" +    // background color
+                "-fx-text-fill: white;" +              // text color (white)
+                "-fx-font-weight: bold;" +             // bold text
+                "-fx-font-size: 22px;");
+        backButton.setOnAction(e -> {showDifficultyfirst();});
 
 
 
@@ -618,7 +764,7 @@ public class SceneManager {
             Entername();
         });
 
-        root.getChildren().addAll(FemaleBtn,maleBtn);
+        root.getChildren().addAll(FemaleBtn,maleBtn,backButton);
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
 
@@ -651,6 +797,15 @@ public class SceneManager {
         SubmitBtn.setLayoutY(430); // adjust based on image
         SubmitBtn.setPrefSize(100, 40);
         SubmitBtn.setStyle("-fx-background-color: transparent;");
+        Button backButton = new Button("\uD83E\uDC14");
+        backButton.setLayoutX(0); // X-position of "START" button in the image
+        backButton.setLayoutY(0); // Y-position of "START" button in the image
+        backButton.setPrefSize(75, 50); // Width and height matching image "START" button
+        backButton.setStyle( "-fx-background-color: #894b12;" +    // background color
+                "-fx-text-fill: white;" +              // text color (white)
+                "-fx-font-weight: bold;" +             // bold text
+                "-fx-font-size: 22px;");
+        backButton.setOnAction(e -> showCharactersecond());
 
 
         SubmitBtn.setOnAction(e -> {
@@ -661,7 +816,7 @@ public class SceneManager {
             startFchallange();
         });
 
-        root.getChildren().addAll(SubmitBtn,nameField);
+        root.getChildren().addAll(SubmitBtn,nameField,backButton);
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
 

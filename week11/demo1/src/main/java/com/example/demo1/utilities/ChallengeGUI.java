@@ -55,6 +55,15 @@ public class ChallengeGUI {
                 "-fx-text-fill: white;" +              // text color (white)
                 "-fx-font-weight: bold;" +             // bold text
                 "-fx-font-size: 16px;" );
+        Button backButton = new Button("\uD83E\uDC14");
+        backButton.setLayoutX(0); // X-position of "START" button in the image
+        backButton.setLayoutY(0); // Y-position of "START" button in the image
+        backButton.setPrefSize(75, 50); // Width and height matching image "START" button
+        backButton.setStyle( "-fx-background-color: #667c17;" +    // background color
+                "-fx-text-fill: white;" +              // text color (white)
+                "-fx-font-weight: bold;" +             // bold text
+                "-fx-font-size: 22px;");
+        backButton.setOnAction(e -> {Fhype();});
 
         Button submitBtn = new Button("Submit");
         submitBtn.setStyle(
@@ -88,7 +97,7 @@ public class ChallengeGUI {
             startSchallange();
         });
 
-        root.getChildren().addAll(qLabel, answerField, submitBtn);
+        root.getChildren().addAll(qLabel, answerField, submitBtn,backButton);
         primaryStage.setScene(new Scene(root, 800, 600));
         primaryStage.setTitle("Challenge 1");
         primaryStage.show();
@@ -140,6 +149,17 @@ public class ChallengeGUI {
                         "-fx-font-weight: bold;" +             // bold text
                         "-fx-font-size: 16px;"                 // increase font size (16 pixels)
         );
+        Button backButton = new Button("\uD83E\uDC14");
+        backButton.setLayoutX(0); // X-position of "START" button in the image
+        backButton.setLayoutY(0); // Y-position of "START" button in the image
+        backButton.setPrefSize(75, 50); // Width and height matching image "START" button
+        backButton.setStyle( "-fx-background-color: #4d230a;" +    // background color
+                "-fx-text-fill: white;" +              // text color (white)
+                "-fx-font-weight: bold;" +             // bold text
+                "-fx-font-size: 22px;");
+        backButton.setOnAction(e -> {
+            Shype();
+        });
         SubmitBtn.setLayoutX(450); // adjust based on image
         SubmitBtn.setLayoutY(520); // adjust based on image
         SubmitBtn.setPrefSize(100, 50);   //cave location button
@@ -164,7 +184,7 @@ public class ChallengeGUI {
             SceneManager.play();
         });
 
-        root.getChildren().addAll(qLabel, answerField, SubmitBtn);
+        root.getChildren().addAll(qLabel, answerField, SubmitBtn,backButton);
         primaryStage.setScene(new Scene(root, 800, 600));
         primaryStage.setTitle("Challenge 2");
         primaryStage.show();
@@ -207,6 +227,17 @@ public class ChallengeGUI {
         answerField.setPrefSize(200,40);
         answerField.setStyle("-fx-background-color: transparent");
         answerField.setPromptText("Your answer");
+        Button backButton = new Button("\uD83E\uDC14");
+        backButton.setLayoutX(0); // X-position of "START" button in the image
+        backButton.setLayoutY(0); // Y-position of "START" button in the image
+        backButton.setPrefSize(75, 50); // Width and height matching image "START" button
+        backButton.setStyle( "-fx-background-color: #577283;" +    // background color
+                "-fx-text-fill: white;" +              // text color (white)
+                "-fx-font-weight: bold;" +             // bold text
+                "-fx-font-size: 22px;");
+        backButton.setOnAction(e -> {
+          Thype();
+        });
 
         Button SubmitBtn = new Button("Submit");
         SubmitBtn.setStyle(
@@ -239,7 +270,7 @@ public class ChallengeGUI {
             onComplete.run();
         });
 
-        root.getChildren().addAll(qLabel, answerField, SubmitBtn);
+        root.getChildren().addAll(qLabel, answerField, SubmitBtn,backButton);
         primaryStage.setScene(new Scene(root, 800, 600));
         primaryStage.setTitle("Challenge 3");
         primaryStage.show();
