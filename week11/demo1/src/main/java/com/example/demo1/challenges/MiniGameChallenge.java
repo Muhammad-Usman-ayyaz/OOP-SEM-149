@@ -1,9 +1,4 @@
 package com.example.demo1.challenges;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
 import com.example.demo1.utilities.Difficulty;
 
 
@@ -20,10 +15,13 @@ public class MiniGameChallenge extends Challenge {
 
     @Override
     public void askQuestion(Scanner scanner) {
+        System.out.println("What is your name?");
+    }
+
+
+    public boolean checkanswer(int ans) {
         Random random = new Random();
         int num = random.nextInt(10) + 1;
-        System.out.println("🎮 Mini-Game: Guess a number between 1 and 10.");
-
         // If player has "Lucky Coin", give them a second chance
         int chances = 1;
         if (this.getPlayer().hasItem("Lucky Coin")) {
@@ -33,7 +31,7 @@ public class MiniGameChallenge extends Challenge {
 
         boolean guessedCorrectly = false;
         for (int i = 0; i < chances; i++) {
-            int guess = scanner.nextInt();
+            int guess = ans;
             if (guess == num) {
                 System.out.println("🎉 You guessed it right! You earned " + points + " points.");
                 guessedCorrectly = true;
@@ -46,6 +44,8 @@ public class MiniGameChallenge extends Challenge {
         if (!guessedCorrectly) {
             System.out.println("❌ The correct number was: " + num);
         }
+
+        return guessedCorrectly;
     }
 
 }

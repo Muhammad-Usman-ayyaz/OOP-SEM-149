@@ -16,26 +16,75 @@ public class ChallengeGUI {
 
     public static void displayFirstlocation(Challenge challenge, Runnable onComplete) {
         BackgroundImage backgroundImage;
-        if(gender){
-            Image bgImage = new Image(SceneManager.class.getResource("/images/8.1 Riddle guy.jpg").toExternalForm());
-            backgroundImage = new BackgroundImage(
-                    bgImage,
-                    BackgroundRepeat.NO_REPEAT,
-                    BackgroundRepeat.NO_REPEAT,
-                    BackgroundPosition.CENTER,
-                    new BackgroundSize(800, 600, false, false, false, false)
-            );
+        if(difficulty == Difficulty.EASY){
+            if(gender){
+                Image bgImage = new Image(SceneManager.class.getResource("/images/8.1 Riddle guy.jpg").toExternalForm());
+                backgroundImage = new BackgroundImage(
+                        bgImage,
+                        BackgroundRepeat.NO_REPEAT,
+                        BackgroundRepeat.NO_REPEAT,
+                        BackgroundPosition.CENTER,
+                        new BackgroundSize(800, 600, false, false, false, false)
+                );
+            }
+            else {
+                Image bgImage = new Image(SceneManager.class.getResource("/images/8.2 Riddle girl.jpg").toExternalForm());
+                backgroundImage= new BackgroundImage(
+                        bgImage,
+                        BackgroundRepeat.NO_REPEAT,
+                        BackgroundRepeat.NO_REPEAT,
+                        BackgroundPosition.CENTER,
+                        new BackgroundSize(800, 600, false, false, false, false)
+                );
+            }
+        }
+        else if(difficulty == Difficulty.MEDIUM){
+            if(gender){
+                Image bgImage = new Image(SceneManager.class.getResource("/images/guy medium riddle.jpg").toExternalForm());
+                backgroundImage = new BackgroundImage(
+                        bgImage,
+                        BackgroundRepeat.NO_REPEAT,
+                        BackgroundRepeat.NO_REPEAT,
+                        BackgroundPosition.CENTER,
+                        new BackgroundSize(800, 600, false, false, false, false)
+                );
+            }
+            else {
+                Image bgImage = new Image(SceneManager.class.getResource("/images/girl medium riddle.png").toExternalForm());
+                backgroundImage= new BackgroundImage(
+                        bgImage,
+                        BackgroundRepeat.NO_REPEAT,
+                        BackgroundRepeat.NO_REPEAT,
+                        BackgroundPosition.CENTER,
+                        new BackgroundSize(800, 600, false, false, false, false)
+                );
+            }
         }
         else {
-        Image bgImage = new Image(SceneManager.class.getResource("/images/8.2 Riddle girl.jpg").toExternalForm());
-            backgroundImage= new BackgroundImage(
-                bgImage,
-                BackgroundRepeat.NO_REPEAT,
-                BackgroundRepeat.NO_REPEAT,
-                BackgroundPosition.CENTER,
-                new BackgroundSize(800, 600, false, false, false, false)
-        );
+            if(gender){
+                    Image bgImage = new Image(SceneManager.class.getResource("/images/guy hard riddle.jpg").toExternalForm());
+                    backgroundImage = new BackgroundImage(
+                            bgImage,
+                            BackgroundRepeat.NO_REPEAT,
+                            BackgroundRepeat.NO_REPEAT,
+                            BackgroundPosition.CENTER,
+                            new BackgroundSize(800, 600, false, false, false, false)
+                    );
+                }
+                else {
+                    Image bgImage = new Image(SceneManager.class.getResource("/images/girl hard riddle.png").toExternalForm());
+                    backgroundImage= new BackgroundImage(
+                            bgImage,
+                            BackgroundRepeat.NO_REPEAT,
+                            BackgroundRepeat.NO_REPEAT,
+                            BackgroundPosition.CENTER,
+                            new BackgroundSize(800, 600, false, false, false, false)
+                    );
+                }
+
         }
+
+
 
 
 
@@ -104,27 +153,74 @@ public class ChallengeGUI {
     }
     public static void displaySecondlocation(Challenge challenge, Runnable onComplete) {
         BackgroundImage backgroundImage;
-        if(gender){
-            Image bgImage = new Image(SceneManager.class.getResource("/images/cave game male.jpg").toExternalForm());
-           backgroundImage = new BackgroundImage(
-                    bgImage,
-                    BackgroundRepeat.NO_REPEAT,
-                    BackgroundRepeat.NO_REPEAT,
-                    BackgroundPosition.CENTER,
-                    new BackgroundSize(800, 600, false, false, false, false)
-            );
+        if(difficulty == Difficulty.EASY){
+            if(gender){
+                Image bgImage = new Image(SceneManager.class.getResource("/images/cave game male.jpg").toExternalForm());
+                backgroundImage = new BackgroundImage(
+                        bgImage,
+                        BackgroundRepeat.NO_REPEAT,
+                        BackgroundRepeat.NO_REPEAT,
+                        BackgroundPosition.CENTER,
+                        new BackgroundSize(800, 600, false, false, false, false)
+                );
+            }
+            else {
+                Image bgImage = new Image(SceneManager.class.getResource("/images/cave games female.jpg").toExternalForm());
+                backgroundImage= new BackgroundImage(
+                        bgImage,
+                        BackgroundRepeat.NO_REPEAT,
+                        BackgroundRepeat.NO_REPEAT,
+                        BackgroundPosition.CENTER,
+                        new BackgroundSize(800, 600, false, false, false, false)
+                );
+            }
+        }
+        else if(difficulty == Difficulty.MEDIUM){
+            if(gender){
+                Image bgImage = new Image(SceneManager.class.getResource("/images/guy math medium.jpg").toExternalForm());
+                backgroundImage = new BackgroundImage(
+                        bgImage,
+                        BackgroundRepeat.NO_REPEAT,
+                        BackgroundRepeat.NO_REPEAT,
+                        BackgroundPosition.CENTER,
+                        new BackgroundSize(800, 600, false, false, false, false)
+                );
+            }
+            else {
+                Image bgImage = new Image(SceneManager.class.getResource("/images/girl math medium.jpg").toExternalForm());
+                backgroundImage= new BackgroundImage(
+                        bgImage,
+                        BackgroundRepeat.NO_REPEAT,
+                        BackgroundRepeat.NO_REPEAT,
+                        BackgroundPosition.CENTER,
+                        new BackgroundSize(800, 600, false, false, false, false)
+                );
+            }
         }
         else {
-            Image bgImage = new Image(SceneManager.class.getResource("/images/cave games female.jpg").toExternalForm());
-            backgroundImage = new BackgroundImage(
-                    bgImage,
-                    BackgroundRepeat.NO_REPEAT,
-                    BackgroundRepeat.NO_REPEAT,
-                    BackgroundPosition.CENTER,
-                    new BackgroundSize(800, 600, false, false, false, false)
-            );
+            if(gender){
+                Image bgImage = new Image(SceneManager.class.getResource("/images/man math hard.png").toExternalForm());
+                backgroundImage = new BackgroundImage(
+                        bgImage,
+                        BackgroundRepeat.NO_REPEAT,
+                        BackgroundRepeat.NO_REPEAT,
+                        BackgroundPosition.CENTER,
+                        new BackgroundSize(800, 600, false, false, false, false)
+                );
+            }
+            else {
+                Image bgImage = new Image(SceneManager.class.getResource("/images/girl math hard.png").toExternalForm());
+                backgroundImage= new BackgroundImage(
+                        bgImage,
+                        BackgroundRepeat.NO_REPEAT,
+                        BackgroundRepeat.NO_REPEAT,
+                        BackgroundPosition.CENTER,
+                        new BackgroundSize(800, 600, false, false, false, false)
+                );
+            }
 
         }
+
 
 
         Pane root = new Pane();
@@ -195,7 +291,7 @@ public class ChallengeGUI {
         BackgroundImage backgroundImage;
         if(gender){
             Image bgImage = new Image(SceneManager.class.getResource("/images/castle game male.jpg").toExternalForm());
-             backgroundImage = new BackgroundImage(
+            backgroundImage = new BackgroundImage(
                     bgImage,
                     BackgroundRepeat.NO_REPEAT,
                     BackgroundRepeat.NO_REPEAT,
@@ -236,7 +332,7 @@ public class ChallengeGUI {
                 "-fx-font-weight: bold;" +             // bold text
                 "-fx-font-size: 22px;");
         backButton.setOnAction(e -> {
-          Thype();
+            Thype();
         });
 
         Button SubmitBtn = new Button("Submit");
@@ -262,7 +358,7 @@ public class ChallengeGUI {
                 } catch (NumberFormatException ignored) {}
 
             } else if (challenge instanceof MiniGameChallenge mgc ) {
-                showGameOver();
+                showscore();
                 return;
             }
 

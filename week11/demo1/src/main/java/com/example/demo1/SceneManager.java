@@ -26,7 +26,7 @@ public class SceneManager {
     private static Player player;
     private static Map gameMap;
     private static Location currentLocation;
-    private static Difficulty difficulty;
+    public static Difficulty difficulty;
     private static int count=0;
     private static final DropShadow glowEffect = new DropShadow(20, Color.CYAN);
     public static boolean gender;
@@ -197,10 +197,42 @@ public class SceneManager {
     private static void setupGame() {
         player.addItem("Calculator");
         player.addItem("Lucky Coin");
+        RiddleChallenge riddle;
+        MathChallenge math;
+        MiniGameChallenge miniGame;
 
-        RiddleChallenge riddle = new RiddleChallenge("What has keys but can't open locks?", "Piano", 10, difficulty);
-        MathChallenge math = new MathChallenge("5 + 3 * 2", 11, 15, difficulty);
-        MiniGameChallenge miniGame = new MiniGameChallenge("Guess Number", 20, difficulty);
+        if(difficulty==difficulty.EASY){
+            riddle = new RiddleChallenge("What has head , tail but no body?", "coin", 10, difficulty);
+        }
+        else if (difficulty==difficulty.MEDIUM) {
+            riddle = new RiddleChallenge("The more you take, the more you leave behind. What am I?", "footsteps", 10, difficulty);
+        }
+        else {
+            riddle = new RiddleChallenge("I have cities, but no houses.\n" +
+                    "I have mountains, but no trees.\n" +
+                    "I have water, but no fish.\n" +
+                    "what am I?", "map", 10, difficulty);
+        }
+        if(difficulty==difficulty.EASY){
+            math = new MathChallenge("5 + 3 * 2", 11, 15, difficulty);
+        } else if (difficulty==difficulty.MEDIUM) {
+            math = new MathChallenge("(18 ÷ 3) + 5 × 2", 16, 15, difficulty);
+        }
+        else {
+            math = new MathChallenge("36 ÷ (3 × 2) + 5 - 4", 7, 15, difficulty);
+        }
+        if(difficulty==difficulty.EASY){
+            miniGame = new MiniGameChallenge("Guess Number", 20, difficulty);
+
+        } else if (difficulty==difficulty.MEDIUM) {
+            miniGame = new MiniGameChallenge("Guess Number", 20, difficulty);
+
+        }
+        else {
+            miniGame = new MiniGameChallenge("Guess Number", 20, difficulty);
+
+        }
+
 
         riddle.setPlayer(player);
         math.setPlayer(player);
@@ -294,7 +326,7 @@ public class SceneManager {
         backButton.setLayoutX(0); // X-position of "START" button in the image
         backButton.setLayoutY(0); // Y-position of "START" button in the image
         backButton.setPrefSize(75, 50); // Width and height matching image "START" button
-        backButton.setStyle( "-fx-background-color: #577283;" +    // background color
+        backButton.setStyle( "-fx-background-color: #4d230a;" +    // background color
                 "-fx-text-fill: white;" +              // text color (white)
                 "-fx-font-weight: bold;" +             // bold text
                 "-fx-font-size: 22px;");
@@ -500,12 +532,12 @@ public class SceneManager {
         Pane root = new Pane();
         root.setBackground(new Background(backgroundImage));
         root.setPrefSize(800, 600);
-        Label score = new Label("Your final score: " + player.getScore());
+
         Button backButton = new Button("\uD83E\uDC14");
         backButton.setLayoutX(0); // X-position of "START" button in the image
         backButton.setLayoutY(0); // Y-position of "START" button in the image
         backButton.setPrefSize(75, 50); // Width and height matching image "START" button
-        backButton.setStyle( "-fx-background-color: #577283;" +    // background color
+        backButton.setStyle( "-fx-background-color: #977b3b;" +    // background color
                 "-fx-text-fill: white;" +              // text color (white)
                 "-fx-font-weight: bold;" +             // bold text
                 "-fx-font-size: 22px;");
@@ -529,7 +561,7 @@ public class SceneManager {
 
 
         exitBtn.setOnAction(e -> primaryStage.close());
-        root.getChildren().addAll( score, exitBtn,backButton);
+        root.getChildren().addAll( exitBtn,backButton);
         primaryStage.setScene(new Scene(root, 800, 600));
 
 
@@ -820,6 +852,66 @@ public class SceneManager {
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
 
+    }
+    public static void showscore(){
+        BackgroundImage backgroundImage;
+        if(player.getScore() == 0){
+            Image bgImage = new Image(SceneManager.class.getResource("/images/zero score.jpg").toExternalForm());
+            backgroundImage = new BackgroundImage(
+                    bgImage,
+                    BackgroundRepeat.NO_REPEAT,
+                    BackgroundRepeat.NO_REPEAT,
+                    BackgroundPosition.CENTER,
+                    new BackgroundSize(800, 600, false, false, false, false)
+            );} else if (player.getScore() > 10 && player.getScore() < 20 ) {
+            Image bgImage = new Image(SceneManager.class.getResource("/images/average score.jpg").toExternalForm());
+            backgroundImage = new BackgroundImage(
+                    bgImage,
+                    BackgroundRepeat.NO_REPEAT,
+                    BackgroundRepeat.NO_REPEAT,
+                    BackgroundPosition.CENTER,
+                    new BackgroundSize(800, 600, false, false, false, false)
+            );
+        }
+        else {
+            Image bgImage = new Image(SceneManager.class.getResource("/images/full score.jpg").toExternalForm());
+            backgroundImage = new BackgroundImage(
+                    bgImage,
+                    BackgroundRepeat.NO_REPEAT,
+                    BackgroundRepeat.NO_REPEAT,
+                    BackgroundPosition.CENTER,
+                    new BackgroundSize(800, 600, false, false, false, false)
+            );
+        }
+
+
+        Pane root = new Pane();
+        root.setBackground(new Background(backgroundImage));
+        root.setPrefSize(800, 600);
+
+        Label label=new Label((String.valueOf(player.getScore())));
+        label.setLayoutX(350);
+        label.setLayoutY(500);
+        label.setStyle("-fx-background-color: #d0c9c9;" +    // background color
+                "-fx-text-fill: white;" +              // text color (white)
+                "-fx-font-weight: bold;" +             // bold text
+                "-fx-font-size: 22px;");
+
+        // Continue Button over image's "Continue" label
+        Button backButton = new Button("\uD83E\uDC14");
+        backButton.setLayoutX(0); // X-position of "START" button in the image
+        backButton.setLayoutY(0); // Y-position of "START" button in the image
+        backButton.setPrefSize(75, 50); // Width and height matching image "START" button
+        backButton.setStyle( "-fx-background-color: #894b12;" +    // background color
+                "-fx-text-fill: white;" +              // text color (white)
+                "-fx-font-weight: bold;" +             // bold text
+                "-fx-font-size: 22px;");
+        backButton.setOnAction(e->showGameOver());
+
+
+        root.getChildren().addAll(label,backButton);
+        Scene scene = new Scene(root);
+        primaryStage.setScene(scene);
     }
 
 
